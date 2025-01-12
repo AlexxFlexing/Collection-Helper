@@ -25,10 +25,10 @@ export interface Beatmap {
   bpm?: number;
   ogBpm?: number;
   sliderVelocity?: number;
-  standardDiffs?: IntDoublePair[];
-  taikoDiffs?: IntDoublePair[];
-  catchDiffs?: IntDoublePair[];
-  maniaDiffs?: IntDoublePair[];
+  standardDiffs?: IntFloatPair[];
+  taikoDiffs?: IntFloatPair[];
+  catchDiffs?: IntFloatPair[];
+  maniaDiffs?: IntFloatPair[];
   drain?: number;
   ogDrain?: number;
   time?: number;
