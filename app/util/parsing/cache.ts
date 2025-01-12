@@ -45,10 +45,10 @@ export const readCache = async (path: string) => {
       hp: reader.readFloat(),
       od: reader.readFloat(),
       sliderVelocity: reader.readDouble(),
-      standardDiffs: readIntDoublePairs(reader),
-      taikoDiffs: readIntDoublePairs(reader),
-      catchDiffs: readIntDoublePairs(reader),
-      maniaDiffs: readIntDoublePairs(reader),
+      standardDiffs: readIntFloatPairs(reader),
+      taikoDiffs: readIntFloatPairs(reader),
+      catchDiffs: readIntFloatPairs(reader),
+      maniaDiffs: readIntFloatPairs(reader),
       drain: reader.readInt32(),
       time: reader.readInt32(),
       previewTime: reader.readInt32(),
@@ -132,16 +132,17 @@ const readTimingPoints = (reader: OsuReader): TimingPoint[] => {
 /**
  * Read beatmap difficulties
  */
-const readIntDoublePairs = (reader: OsuReader): IntDoublePair[] => {
-  let output: IntDoublePair[] = [];
+
+const readIntFloatPairs = (reader: OsuReader): IntFloatPair[] => {
+  let output: IntFloatPair[] = [];
   const number = reader.readInt32();
 
   for (let i = 0; i < number; i++) {
     reader.readBytes(1)[0]; // random bytes between the values
     const int = reader.readInt32();
     reader.readBytes(1)[0]; // random bytes between the values
-    const double = reader.readDouble();
-    const pair: IntDoublePair = { mods: int, stars: double };
+    const float = reader.readFloat();
+    const pair: IntFloatPair = { mods: int, stars: float };
     output.push(pair);
   }
 
