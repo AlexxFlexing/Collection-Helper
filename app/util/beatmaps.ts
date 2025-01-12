@@ -1,5 +1,5 @@
 import { Filter, GetBeatmapsReq, GetSelectedReq, PageResponse } from "../../models/beatmaps";
-import { Beatmap, IntDoublePair } from "../../models/cache";
+import { Beatmap, IntFloatPair } from "../../models/cache";
 import { CustomFilter } from "../../models/filters";
 import { readFilters } from "./database/filters";
 import { beatmapMap, parseBpm } from "./parsing/cache";
