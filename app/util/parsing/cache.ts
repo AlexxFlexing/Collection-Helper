@@ -1,4 +1,4 @@
-import { Beatmap, IntDoublePair, TimingPoint } from "../../../models/cache";
+import { Beatmap, TimingPoint, IntFloatPair } from "../../../models/cache";
 import { OsuReader } from "osu-buffer";
 import * as fs from "fs";
 import { getMissingMaps, removeMissingMaps } from "../database/collection";
