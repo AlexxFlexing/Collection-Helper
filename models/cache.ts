@@ -75,6 +75,11 @@ export interface TimingPoint {
   inherited: boolean;
 }
 
+export interface IntFloatPair {
+  mods: number;
+  stars: number;
+}
+
 export interface HitObject {
   x: number;
   y: number;
